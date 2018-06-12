@@ -31,7 +31,7 @@ $(document).ready(function() {
     Converts card values to jQuery card objects and adds them to the supplied game
     object.
   */
-sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8
+
   MatchGame.renderCards = function(cardValues, $game) {
     var cardColors = ['hsl(25, 85%, 65%)','hsl(55, 85%, 65%)','hsl(90, 85%, 65%)','hsl(160, 85%, 65%)','hsl(220, 85%, 65%)','hsl(265, 85%, 65%)','hsl(310, 85%, 65%)','hsl(360, 85%, 65%)']
     $('.card').empty();
