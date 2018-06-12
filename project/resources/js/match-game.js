@@ -1,6 +1,7 @@
-$(document).ready(function() {
-  var MatchGame = {};
+var MatchGame = {};
 
+$(document).ready(function() {
+  renderCards();
   /*
     Sets up a new game after HTML document has loaded.
     Renders a 4x4 board of cards.
@@ -27,6 +28,7 @@ $(document).ready(function() {
     }
     return cardValues;
   };
+
   /*
     Converts card values to jQuery card objects and adds them to the supplied game
     object.
@@ -34,10 +36,18 @@ $(document).ready(function() {
 
   MatchGame.renderCards = function(cardValues, $game) {
     var cardColors = ['hsl(25, 85%, 65%)','hsl(55, 85%, 65%)','hsl(90, 85%, 65%)','hsl(160, 85%, 65%)','hsl(220, 85%, 65%)','hsl(265, 85%, 65%)','hsl(310, 85%, 65%)','hsl(360, 85%, 65%)']
-    $('.card').empty();
+    $game.empty();
     for (var i = 0; i < cardValues.length; i++) {
-      var $card = $('<div class="card col-sm-3"><span></span></div>');
-      $card.data('number', cardValues[i]).data('flipped', false).data('color', );
+      var value = cardValues[i];
+      var color = cardColors[value - 1];
+      var data = {
+        value: value,
+        color: color,
+        isFlipped: false
+      }
+      var $card = $('<div class="card col-sm-3"></div>');
+      $card.data(data);
+      $game.append($card);
     }
   };
 
